@@ -6,7 +6,7 @@ WITH add_season AS (
                 WHEN month_num IN ('09','10','11') THEN 'Fall'
                 ELSE 'Winter'
             END AS season
-    FROM {{ref('prep_temp')}}           
+    FROM prep_temp           
 ),
 avg_season AS(
                 SELECT city,

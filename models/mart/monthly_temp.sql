@@ -1,7 +1,6 @@
 WITH total_month_avg AS (
     SELECT city,
             country,
-            month,
             year,
             lat,
             lon,

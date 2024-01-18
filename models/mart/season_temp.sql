@@ -22,5 +22,16 @@ avg_season AS(
                 WHERE city IN ('Berlin','Madrid')
                 GROUP BY city, country, year, season, lat,lon
 )
-SELECT *
+SELECT add_season.*,
+        avg_season.city,
+        avg_season.country,
+        avg_season.lat,
+        avg_season.lon,
+        avg_season.year,
+        avg_season.season,
+        avg_season.avg_temp_month,
+        avg_season.max_temp_season,
+        avg_season.min_temp_season
 FROM add_season
+LEFT JOIN avg_season
+USING (month)

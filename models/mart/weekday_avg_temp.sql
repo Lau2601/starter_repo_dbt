@@ -1,6 +1,7 @@
 WITH total_avg AS (
     SELECT city,
             country,
+            week,
             year,
             lat,
             lon,

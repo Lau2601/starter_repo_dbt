@@ -19,10 +19,11 @@ avg_season AS(
                         MAX(maxtemp_c) AS max_temp_season,
                         MIN(mintemp_c) AS min_temp_season
                 FROM add_season
-                WHERE city IN ('Berlin','Madrid')
+                WHERE city IN ('"Berlin"','"Madrid"')
                 GROUP BY city, country, year, season, lat,lon
 )
-SELECT add_season.*,
+SELECT add_season.city,
+    add_season.country,
     avg_season.avg_temp_season,
     avg_season.max_temp_season,
     avg_season.min_temp_season

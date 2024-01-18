@@ -23,7 +23,7 @@ avg_season AS(
                 GROUP BY city, country, year, season, lat,lon
 )
 SELECT add_season.*,
-    avg_season.avg_temp_month,
+    avg_season.avg_temp_season,
     avg_season.max_temp_season,
     avg_season.min_temp_season
 FROM add_season

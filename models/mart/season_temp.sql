@@ -6,7 +6,7 @@ WITH add_season AS (
                 WHEN month_num IN ('09','10','11') THEN 'Fall'
                 ELSE 'Winter'
             END AS season
-    FROM prep_temp           
+    FROM {{ref('prep_temp')}}           
 ),
 avg_season AS(
                 SELECT city,
@@ -22,11 +22,4 @@ avg_season AS(
                 WHERE city IN ('"Berlin"','"Madrid"')
                 GROUP BY city, country, year, season, lat,lon
 )
-SELECT add_season.city,
-    add_season.country,
-    avg_season.avg_temp_season,
-    avg_season.max_temp_season,
-    avg_season.min_temp_season
-FROM add_season
-LEFT JOIN avg_season
-ON add_season.city = avg_season.city
+SELECT * FROM avg_season

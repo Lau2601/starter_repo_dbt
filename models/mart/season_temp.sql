@@ -18,5 +18,5 @@ SELECT city,
         MAX(maxtemp_c) AS max_temp_season,
         MIN(mintemp_c) AS min_temp_season
 FROM add_season
-WHERE city = ('Berlin','Madrid')
+WHERE city IN ('Berlin','Madrid')
 GROUP BY city, country, year, season, lat,lon

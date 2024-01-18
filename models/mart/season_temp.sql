@@ -1,9 +1,9 @@
 WITH add_season AS (
     SELECT *,
             CASE
-                WHEN month_num IN ('3','4','5') THEN 'Spring'
-                WHEN month_num IN ('6','7','8') THEN 'Summer'
-                WHEN month_num IN ('9','10','11') THEN 'Fall'
+                WHEN month_num IN ('03','04','05') THEN 'Spring'
+                WHEN month_num IN ('06','07','08') THEN 'Summer'
+                WHEN month_num IN ('09','10','11') THEN 'Fall'
                 ELSE 'Winter'
             END AS season
     FROM {{ref('prep_temp')}}           

@@ -13,3 +13,4 @@ WITH total_avg AS (
 SELECT *
 FROM total_avg
 
+

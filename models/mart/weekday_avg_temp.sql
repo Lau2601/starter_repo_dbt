@@ -4,7 +4,7 @@ WITH total_avg AS (
             year,
             lat,
             lon,
-            round(avg(avgtemp_c),2) as avg_temp_week,
+            avg(avgtemp_c) as avg_temp_week,
             max(maxtemp_c) as max_temp_week,
             min(mintemp_c) as min_temp_week
     FROM {{ref('prep_temp')}}
